@@ -1,31 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav" class="bg-primary">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div>
+    <nav-bar></nav-bar>
     <router-view/>
   </div>
 </template>
 
 <script>
 import { conexionApi } from './config/configApi';
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
   mounted() {
     conexionApi();
   },
+  components: {
+    NavBar
+  }
 }
 </script>
 
 <style lang="scss">
-:root{
---primary: #000000;
-}
-$body-bg: #000;
-$body-color: #111;
-
-@import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/bootstrap-vue/src/index.scss';
+/* $primary: #454468;
+$secondary: #2bcf26;
+$info: #875644;
+@import '../node_modules/bootstrap/scss/bootstrap.scss';  */
 </style>

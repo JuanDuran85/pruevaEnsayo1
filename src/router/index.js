@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 import Artistas from '../views/Artistas.vue';
 
 Vue.use(VueRouter)
@@ -11,9 +11,19 @@ Vue.use(VueRouter)
     component: Artistas
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/administracion',
+    name: 'Administracion',
+    component: () => import('../views/Administracion.vue')
+  },
+  {
+    path: '/articulos/:id',
+    name: 'Articulos',
+    component: () => import('../views/Articulos.vue')
+  },
+  {
+    path: '*',
+    name: '404Error',
+    component: () => import('../views/404Error.vue')
   }
 ]
 
